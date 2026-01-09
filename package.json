@@ -1,0 +1,38 @@
+{
+  "name": "uzun-browser",
+  "version": "1.0.0",
+  "description": "Hızlı, minimal ve güçlü web tarayıcısı",
+  "main": "main.js",
+  "author": "Mustafa Berke Şimşekler",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.uzun.browser",
+    "productName": "Uzun Browser",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "style.css",
+      "script.js",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "asar": false,
+    "compression": "store"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Uzun Browser</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Single compact header -->
+  <div class="header" id="header">
+    <!-- Window controls -->
+    <div class="window-controls">
+      <button class="btn close" title="Kapat"></button>
+      <button class="btn minimize" title="Küçült"></button>
+      <button class="btn maximize" title="Büyüt"></button>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo-area">
+      <img src="logo.png" class="logo" alt="Uzun" />
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs-area" id="tabsArea">
+      <div class="tabs-container" id="tabsContainer"></div>
+      <button id="newTabBtn" class="new-tab-btn" title="Yeni sekme (Ctrl+T)">+</button>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-controls">
+      <button id="back" class="nav-btn" title="Geri (Alt+←)">◀</button>
+      <button id="forward" class="nav-btn" title="İleri (Alt+→)">▶</button>
+      <button id="reload" class="nav-btn" title="Yenile (Ctrl+R)">⟳</button>
+      <button id="home" class="nav-btn" title="Ana sayfa">🏠</button>
+    </div>
+
+    <!-- Address bar -->
+    <form id="searchForm" class="address-bar" autocomplete="off">
+      <input id="searchInput" placeholder="URL veya arama..." />
+      <button type="button" id="addCurrentBookmark" class="addr-btn" title="Yer imi ekle (Ctrl+D)">★</button>
+      <button type="submit" class="addr-btn go-btn">→</button>
+    </form>
+
+    <!-- Utility buttons -->
+    <div class="utility-btns">
+      <button id="bookmarksBtn" class="util-btn" title="Yer imleri (Ctrl+B)">★</button>
+      <button id="historyBtn" class="util-btn" title="Geçmiş (Ctrl+H)">🕐</button>
+      <button id="downloadsBtn" class="util-btn" title="İndirmeler">⬇</button>
+      <button id="menuBtn" class="util-btn" title="Menü">☰</button>
+    </div>
+  </div>
+
+  <!-- Compact bookmarks bar (collapsible) -->
+  <div class="bookmarks-bar collapsed" id="bookmarksBar">
+    <div class="bookmarks-scroll" id="bookmarksScroll"></div>
+    <button id="addBookmarkBtn" class="bookmark-add" title="Yeni yer imi ekle">+</button>
+  </div>
+
+  <!-- Side panels -->
+  <div class="side-panel collapsed" id="historyPanel">
+    <div class="panel-header">
+      <h3>Geçmiş</h3>
+      <div class="panel-actions">
+        <button id="clearHistory" class="panel-btn">Temizle</button>
+        <button id="closeHistory" class="panel-btn">×</button>
+      </div>
+    </div>
+    <div id="historyList" class="panel-content"></div>
+  </div>
+
+  <div class="side-panel collapsed" id="downloadsPanel">
+    <div class="panel-header">
+      <h3>İndirmeler</h3>
+      <button id="closeDownloads" class="panel-btn">×</button>
+    </div>
+    <div id="downloadsList" class="panel-content"></div>
+  </div>
+
+  <!-- Menu dropdown -->
+  <div class="dropdown-menu collapsed" id="menuDropdown">
+    <button id="newWindowBtn" class="menu-item">🗔 Yeni Pencere</button>
+    <button id="settingsBtn" class="menu-item">⚙ Ayarlar</button>
+    <button id="aboutBtn" class="menu-item">ℹ Hakkında</button>
+  </div>
+
+  <!-- Content area (full screen) - NO WEBVIEW HERE, JS CREATES IT -->
+  <div class="content" id="content"></div>
+ <script src="script.js"></script>
+</body>
+</html>
