@@ -79,8 +79,8 @@ function createWindow() {
   console.log('========================================');
   
   mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 900,
+    width: 1720,
+    height: 970,
     minWidth: 1000,
     minHeight: 700,
     frame: false,
@@ -182,7 +182,7 @@ function createWindow() {
     webPreferences.contextIsolation = true;
     webPreferences.webSecurity = false;
     webPreferences.allowRunningInsecureContent = true;
-    webPreferences.devTools = true;
+    webPreferences.devTools = false;
     });
 
     mainWindow.webContents.openDevTools();
